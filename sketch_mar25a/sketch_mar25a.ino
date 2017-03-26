@@ -69,7 +69,7 @@ void setup() {
   drinkTray.attach(3);    //declaire servo as digital pin 3
 
   // set advertised local name and service UUID:
-  blePeripheral.setLocalName("MyBitch");
+  blePeripheral.setLocalName("ShotBOT");
   blePeripheral.setAdvertisedServiceUuid(ledService.uuid());        
 
   // add service and characteristic:
@@ -135,9 +135,18 @@ void loop() {
               }else{                          //do nothing if there is no glass
                 Serial.print("not detected \n");
               }
+            }
+            //play the song
+              for(int i = 0; i < length; i++) {
+                if(notes[i] == ' ') {
+                  delay(beats[i] * tempo);
+                } else {
+                   playNote(notes[i], beats[i] * tempo);
+                }
+                 delay(tempo / 2); /* delay between notes */
+               }
               //delaytime-=5;      // always delay
               delay(1000);
-            }
         }
         if (switchCharacteristic.value() == 0){   // a 0 value
           void reinicialize();
@@ -166,14 +175,7 @@ void LEDlight(int numLED){
       break;
     case 10:
       digitalWrite(LEDFIVE,HIGH);
-      for(int i = 0; i < length; i++) {
-      if(notes[i] == ' ') {
-        delay(beats[i] * tempo);
-      } else {
-        playNote(notes[i], beats[i] * tempo);
-      }
-      delay(tempo / 2); /* delay between notes */
-      }
+      
   }
 } 
       
