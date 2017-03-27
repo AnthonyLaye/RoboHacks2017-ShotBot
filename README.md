@@ -1,5 +1,6 @@
 # RoboHacks2017-ShotBot
 McGill RoboHacks2017 ShotBot
+Winner of "Best Electrical Robot" award.
 
 Ever wanted a robot that could serve you shots? 
 Introducing the ShotBot. 
