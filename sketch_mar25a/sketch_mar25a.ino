@@ -38,7 +38,7 @@ const int maxRangTwo = 6;
 int delaytime;
 
 
-int length = 15; /* the number of notes */
+const int length = 15; /* the number of notes */
 char notes[] = "ccggaagffeeddc ";
 int beats[] = { 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 4 };
 int tempo = 300;
